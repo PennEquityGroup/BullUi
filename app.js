@@ -12,7 +12,7 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 // Use BullBoard router
-app.use("/admin/queues", bullBoardRouter);
+app.use("/admin", bullBoardRouter);
 
 app.get("/", (req, res) => {
   res.render("home");
