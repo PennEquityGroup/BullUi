@@ -14,6 +14,7 @@ body {
 }
 
 .typewriter h1 {
+  font-size: 50px;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -41,4 +42,8 @@ body {
   50% {
     border-color: orange;
   }
+}
+
+.apple {
+  margin-top: 45px;
 }
