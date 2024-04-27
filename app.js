@@ -1,15 +1,21 @@
-// app.js
 const express = require("express");
+const { engine } = require("express-handlebars");
 const { bullBoardRouter } = require("./src/bullboard/index");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Use BullBoard router in your Express app
+app.engine("handlebars", engine());
+app.set("view engine", "handlebars");
+app.set("views", "./views");
+
+app.use(express.static("public"));
+
+// Use BullBoard router
 app.use("/admin/queues", bullBoardRouter);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the home page!");
+  res.render("home");
 });
 
 app.listen(PORT, () => {
